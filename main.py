@@ -97,14 +97,14 @@ def main(settings):
                     if response_code == 200:
                         print(Fore.GREEN + f"Unfavorited game: {game_name} (ID: {game_id})")
                         unfavorited += 1
-                        retry_delay = max(10, total_attempts * 2)  # Use total attempts to calculate new delay
+                        retry_delay = max(10, total_attempts * 2) 
                         break
                     else:
                         print(Fore.RED + f"Failed to unfavor game: {game_name} (ID: {game_id}).")
 
-                        # Use the dynamic retry delay
+                
                         time.sleep(retry_delay)
-                        # Retry unfavoring the game
+                        
                         xsrf_token = get_xsrf_token(cookie)
                         if xsrf_token is None:
                             os.system("pause")
