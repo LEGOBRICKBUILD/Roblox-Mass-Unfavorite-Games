@@ -1,6 +1,5 @@
 import os
 import json
-import requests
 from colorama import Fore, init
 import time
 from bs4 import BeautifulSoup
